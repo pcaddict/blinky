@@ -1,0 +1,8 @@
+{
+    "clangd.arguments": [
+        "--pretty",
+        "--background-index",
+        "--query-driver=C:\\Users\\Patrick\\Development\\Toolchains\\zephyr-sdk-0.16.4\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-g++.exe"
+    ],
+    "cmake.configureOnOpen": false
+}

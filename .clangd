@@ -1,0 +1,10 @@
+CompileFlags:
+  Remove:
+    - -fno-freestanding
+    - -fno-reorder-functions
+    - -mfp16-format=ieee
+
+Diagnostics:
+  ClangTidy:
+    Add: [modernize*, bugprone*]
+    Remove: [modernize-use-trailing-return-type, modernize-avoid-c-arrays, bugprone-easily-swappable-parameters]
