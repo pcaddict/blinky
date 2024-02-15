@@ -1,7 +1,0 @@
-[manifest]
-path = \Users\Patrick\Development\zephyrproject\zephyr
-file = west.yml
-
-[zephyr]
-base = \Users\Patrick\Development\zephyrproject\zephyr
-

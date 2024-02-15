@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2020, Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&adc {
+	status = "disabled";
+};
+
+&qspi {
+	status = "disabled";
+};
+
+&rng {
+	status = "disabled";
+};
+
+
+&i2c0 {
+	status = "disabled";
+};
+
+&spi2 {
+	status = "disabled";
+};
+
+
+&temp {
+	compatible = "nordic,nrf-temp";
+	status = "disabled";
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&uart0 { 
+	compatible = "nordic,nrf-uarte";
+	current-speed = <115200>;
+	status = "disabled";
+};
+
+&radio {
+	status = "disabled";
+};
+
+&usbd {
+	status = "disabled";
+};
