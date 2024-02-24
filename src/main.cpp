@@ -14,14 +14,14 @@
 
 LOG_MODULE_REGISTER(app, LOG_LEVEL_DBG);
 
-constexpr gpio_dt_spec status_red_led = GPIO_DT_SPEC_GET(DT_NODELABEL(status_red), gpios);
-constexpr gpio_dt_spec status_blue_led = GPIO_DT_SPEC_GET(DT_NODELABEL(status_blue), gpios);
-constexpr gpio_dt_spec status_green_led = GPIO_DT_SPEC_GET(DT_NODELABEL(status_green), gpios);
-constexpr gpio_dt_spec user_led = GPIO_DT_SPEC_GET(DT_NODELABEL(user_led), gpios);
+// constexpr gpio_dt_spec status_red_led = GPIO_DT_SPEC_GET(DT_NODELABEL(status_red), gpios);
+// constexpr gpio_dt_spec status_blue_led = GPIO_DT_SPEC_GET(DT_NODELABEL(status_blue), gpios);
+// constexpr gpio_dt_spec status_green_led = GPIO_DT_SPEC_GET(DT_NODELABEL(status_green), gpios);
+// constexpr gpio_dt_spec user_led = GPIO_DT_SPEC_GET(DT_NODELABEL(user_led), gpios);
 
 void timer_stop(k_timer *timer)
 {
-    auto led = static_cast<GPIO_LED*>(timer->user_data);
+    const auto led = static_cast<GPIO_LED*>(timer->user_data);
     led->off();
 }
 
@@ -38,9 +38,9 @@ k_timer blue_timer {};
 
 int main()
 {
-    GPIO_LED green { &status_green_led };
-    GPIO_LED red { &status_red_led };
-    GPIO_LED blue {&user_led};
+    GPIO_LED green { GPIO_DT_SPEC_GET(DT_NODELABEL(status_red), gpios) };
+    GPIO_LED red { GPIO_DT_SPEC_GET(DT_NODELABEL(status_green), gpios) };
+    GPIO_LED blue { GPIO_DT_SPEC_GET(DT_NODELABEL(user_led), gpios) };
     
     k_timer_init(&green_timer, timer_handler, timer_stop);
     k_timer_init(&red_timer, timer_handler, timer_stop);
