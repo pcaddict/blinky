@@ -1,3 +1,5 @@
+#pragma once
+
 #include <zephyr/devicetree.h>
 #include <zephyr/drivers/gpio.h>
 
